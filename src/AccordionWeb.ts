@@ -9,7 +9,7 @@ export class AccordionWeb extends LitElement {
   protected render(): TemplateResult {
     return html`
       <main>
-        TESTs8
+        TESTs9
       </main>
     `;
   }

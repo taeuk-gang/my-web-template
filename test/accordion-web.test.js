@@ -1,3 +1,4 @@
+/* global describe, beforeEach, it */
 import { html, fixture, expect } from '@open-wc/testing';
 
 import '../src/accordion-web';

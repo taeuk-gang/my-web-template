@@ -9,6 +9,9 @@ module.exports = {
     // custom es-dev-server options
     nodeResolve: true,
     watch: true,
-    open: true
+    open: true,
+  },
+  rollup: config => {
+    return config;
   },
 };

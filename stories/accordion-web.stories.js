@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit-element';
 import '../src/accordion-web';
 
 export default {
