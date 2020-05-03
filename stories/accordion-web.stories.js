@@ -5,7 +5,6 @@ export default {
   title: 'accordion-web',
 };
 
-export const App = () =>
-  html`
+export const App = () => html`
     <accordion-web></accordion-web>
   `;
