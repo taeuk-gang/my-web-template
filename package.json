@@ -4,8 +4,8 @@
     "lint:types": "tsc",
     "tsc:watch": "tsc --watch",
     "lint:fix": "eslint --ext .ts . --fix",
-    "test": "karma start --coverage",
-    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test": "tsc && karma start --coverage",
+    "test:watch": "tsc && karma start --auto-watch=true --single-run=false",
     "storybook": "start-storybook --file-extensions .ts --node-resolve --babel --open --watch",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir dist --app-index index.html --open --compatibility none",
@@ -15,9 +15,11 @@
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
     "@open-wc/building-rollup": "^1.2.4",
     "@open-wc/demoing-storybook": "^2.1.3",
+    "@open-wc/karma-esm": "^2.13.28",
     "@open-wc/testing": "^2.5.16",
     "@open-wc/testing-karma": "^3.3.17",
     "@rollup/plugin-babel": "^5.0.0",
@@ -40,12 +42,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint && npm run test",
       "pre-push": "npm --no-git-tag-version version patch"
     }
   },
   "name": "accordion-web",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",

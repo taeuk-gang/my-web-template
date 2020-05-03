@@ -18,14 +18,16 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/interface-name-prefix": [1, { "prefixWithI": "always" }],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-var-requires": "off",
   },
   overrides: [
     {
       // enable the rule specifically for TypeScript files
       files: ["*.ts", "*.tsx"],
       rules: {
-        "@typescript-eslint/explicit-function-return-type": ["error"]
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/no-var-requires": ["warn"],
       }
     }
   ]

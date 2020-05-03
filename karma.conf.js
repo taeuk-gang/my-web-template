@@ -1,5 +1,5 @@
-import { createDefaultConfig } from '@open-wc/testing-karma';
-import merge from 'deepmerge';
+const { createDefaultConfig } = require('@open-wc/testing-karma');
+const merge = require('deepmerge');
 
 module.exports = (config) => {
   config.set(
@@ -13,8 +13,23 @@ module.exports = (config) => {
         { pattern: config.grep ? config.grep : 'test/**/*.test.js', type: 'module' },
       ],
 
+      basePath: '',
+      colors: true,
+
+      plugins: [
+        // load plugin
+        require.resolve('@open-wc/karma-esm'),
+    
+        // fallback: resolve any karma- plugins
+        'karma-*',
+      ],
+
+      frameworks: ['esm'],
+
       esm: {
         nodeResolve: true,
+        babel: true,
+        fileExtensions: [`.ts`],
       },
       // you can overwrite/extend the config further
     }),
