@@ -1,3 +1,3 @@
-import { AccordionWeb } from './AccordionWeb.js';
+import { AccordionWeb } from './AccordionWeb';
 
 customElements.define('accordion-web', AccordionWeb);

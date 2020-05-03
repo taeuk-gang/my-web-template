@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../src/accordion-web.js';
+import '../src/accordion-web';
 
 describe('AccordionWeb', () => {
   let element;

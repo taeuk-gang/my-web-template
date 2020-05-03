@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import '../src/accordion-web.js';
+import '../src/accordion-web';
 
 export default {
   title: 'accordion-web',
