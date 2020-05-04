@@ -1,10 +1,11 @@
 import { html } from 'lit-element';
-import '../src/accordion-web';
+
+import '../src/pages/page-test/page-test';
 
 export default {
   title: 'accordion-web',
 };
 
-export const App = () => html`
-    <accordion-web></accordion-web>
-  `;
+export const PageTest = () => html`
+  <page-test></page-test>
+`;

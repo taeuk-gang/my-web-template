@@ -7,7 +7,7 @@ describe('AccordionWeb', () => {
   let element;
   beforeEach(async () => {
     element = await fixture(html`
-      <accordion-web></accordion-web>
+      <page-test></page-test>
     `);
   });
 

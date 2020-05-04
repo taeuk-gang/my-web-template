@@ -1,17 +1,21 @@
 import { LitElement, html, css, CSSResult, TemplateResult, customElement } from 'lit-element';
 
-@customElement('page-main')
-export class PageMain extends LitElement {
+@customElement('page-test')
+export class PageTest extends LitElement {
   static get styles(): CSSResult {
     return css`
     `;
   }
 
+  protected createRenderRoot(): Element | ShadowRoot {
+    return this;
+  }
+
   protected render(): TemplateResult {
     return html`
-      <main>
-        TESTs12
-      </main>
+    <div>
+      TEST Page
+    </div>
     `;
   }
 }
