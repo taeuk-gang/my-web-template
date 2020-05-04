@@ -1,6 +1,8 @@
 const { createDefaultConfig } = require('@open-wc/testing-karma');
 const merge = require('deepmerge');
 
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
   config.set(
     merge(createDefaultConfig(config), {
@@ -15,6 +17,8 @@ module.exports = (config) => {
 
       basePath: '',
       colors: true,
+      reporters: ['progress'],
+      browsers: ['ChromeHeadless'],
 
       plugins: [
         // load plugin
@@ -24,7 +28,7 @@ module.exports = (config) => {
         'karma-*',
       ],
 
-      frameworks: ['esm'],
+      frameworks: ['esm', 'mocha'],
 
       esm: {
         nodeResolve: true,
