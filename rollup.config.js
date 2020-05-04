@@ -6,6 +6,7 @@ import { createSpaConfig } from '@open-wc/building-rollup';
 import typescript from '@rollup/plugin-typescript';
 import filesize from 'rollup-plugin-filesize';
 import babel from '@rollup/plugin-babel';
+import copy from 'rollup-plugin-copy';
 
 // use createBasicConfig to do regular JS to JS bundling
 // import { createBasicConfig } from '@open-wc/building-rollup';
@@ -48,7 +49,14 @@ export default merge(baseConfig, {
     filesize(),
     babel({
       babelHelpers: 'bundled',
-    })
+    }),
+    copy({
+      targets: [
+        { src: './src/assets/**/*', dest: './dist' }
+      ],
+      // set flatten to false to preserve folder structure
+      flatten: false,
+    }),
   ],
 
   // alternatively, you can use your JS as entrypoint for rollup and

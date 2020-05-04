@@ -1,19 +1,15 @@
-import { LitElement, html, css, CSSResult, TemplateResult, customElement } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement } from 'lit-element';
+import { styles } from './page-404.style';
 
 @customElement('page-404')
 export class Page404 extends LitElement {
-  static get styles(): CSSResult {
-    return css`
-    `;
-  }
-
   protected createRenderRoot(): Element | ShadowRoot {
     return this;
   }
 
   protected render(): TemplateResult {
     return html`
-      <main>
+      <main class="${styles}">
         404 Page
       </main>
     `;

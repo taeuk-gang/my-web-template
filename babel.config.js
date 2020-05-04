@@ -13,6 +13,8 @@ module.exports = {
   ],
   plugins: [
     '@babel/plugin-syntax-dynamic-import',
+    ['transform-inline-environment-variables'],
+		['emotion'],
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }]
   ],

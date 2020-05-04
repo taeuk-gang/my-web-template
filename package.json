@@ -5,7 +5,7 @@
     "tsc:watch": "tsc --watch",
     "lint:fix": "eslint --ext .ts . --fix",
     "test": "tsc && karma start --reporters progress",
-    "test:coverage": "tsc && karma start --coverage",    
+    "test:coverage": "tsc && karma start --coverage",
     "test:watch": "tsc && karma start --auto-watch=true --reporters progress --single-run=false --browsers IE,Chrome,ChromeHeadless",
     "storybook": "start-storybook --file-extensions .ts --node-resolve --babel --open --watch",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
@@ -28,6 +28,7 @@
     "@rollup/plugin-typescript": "^4.1.1",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "browserslist": "^4.12.0",
     "bufferutil": "^4.0.1",
     "chai": "^4.2.0",
@@ -44,6 +45,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.7.6",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-filesize": "^8.0.2",
     "sinon": "^9.0.2",
     "typescript": "^3.8.3",
@@ -51,18 +53,19 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test:report",
+      "pre-commit": "npm run lint && npm run test",
       "pre-push": "npm --no-git-tag-version version patch"
     }
   },
   "name": "accordion-web",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",
   "license": "MIT",
   "dependencies": {
     "@vaadin/router": "^1.7.2",
+    "emotion": "^10.0.27",
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
   },

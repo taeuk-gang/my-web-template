@@ -1,19 +1,15 @@
-import { LitElement, html, css, CSSResult, TemplateResult, customElement } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement } from 'lit-element';
+import { styles } from './page-test.style';
 
 @customElement('page-test')
 export class PageTest extends LitElement {
-  static get styles(): CSSResult {
-    return css`
-    `;
-  }
-
   protected createRenderRoot(): Element | ShadowRoot {
     return this;
   }
 
   protected render(): TemplateResult {
     return html`
-    <div>
+    <div class="${styles}">
       TEST Page
     </div>
     `;
