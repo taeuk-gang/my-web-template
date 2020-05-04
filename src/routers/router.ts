@@ -10,6 +10,13 @@ const initRouter = (): void => {
       component: 'base-layout',
       children: [
         {
+          path: '/', 
+          component: 'page-home',
+          action: async () => {
+            await import('../pages/page-home/page-home');
+          },
+        },
+        {
           path: '/test', 
           component: 'page-test',
           action: async () => {

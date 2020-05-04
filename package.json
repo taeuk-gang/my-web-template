@@ -4,7 +4,8 @@
     "lint:types": "tsc",
     "tsc:watch": "tsc --watch",
     "lint:fix": "eslint --ext .ts . --fix",
-    "test": "tsc && karma start --coverage",
+    "test": "tsc && karma start --reporters progress",
+    "test:coverage": "tsc && karma start --coverage",    
     "test:watch": "tsc && karma start --auto-watch=true --reporters progress --single-run=false --browsers IE,Chrome,ChromeHeadless",
     "storybook": "start-storybook --file-extensions .ts --node-resolve --babel --open --watch",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
@@ -15,6 +16,7 @@
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
     "@open-wc/building-rollup": "^1.2.4",
@@ -49,12 +51,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test",
+      "pre-commit": "npm run lint && npm run test:report",
       "pre-push": "npm --no-git-tag-version version patch"
     }
   },
   "name": "accordion-web",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",

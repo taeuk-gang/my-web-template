@@ -24,19 +24,19 @@ const baseConfig = createSpaConfig({
   // set to true to inject the service worker registration into your index.html
   injectServiceWorker: false,
 
-  // polyfillsLoader: {
-  //   polyfills: {
-  //     hash: true,
-  //     coreJs: true,
-  //     fetch: true,
-  //     abortController: true,
-  //     regeneratorRuntime: true,
-  //     dynamicImport: true,
-  //     webcomponents: true,
-  //     intersectionObserver: true,
-  //     resizeObserver: true,
-  //   },
-  // },
+  polyfillsLoader: {
+    polyfills: {
+      hash: true,
+      coreJs: true,
+      fetch: true,
+      abortController: true,
+      regeneratorRuntime: true,
+      dynamicImport: true,
+      webcomponents: true,
+      intersectionObserver: true,
+      resizeObserver: true,
+    },
+  },
 });
 
 export default merge(baseConfig, {
