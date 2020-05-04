@@ -20,6 +20,7 @@ module.exports = {
     "@typescript-eslint/interface-name-prefix": [1, { "prefixWithI": "always" }],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-use-before-define": ["off"]
   },
   overrides: [
     {
@@ -28,6 +29,7 @@ module.exports = {
       rules: {
         "@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true }],
         "@typescript-eslint/no-var-requires": ["warn"],
+        "@typescript-eslint/no-use-before-define": ["error"]
       }
     }
   ]

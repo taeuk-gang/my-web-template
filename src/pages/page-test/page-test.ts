@@ -9,7 +9,7 @@ export class PageTest extends LitElement {
 
   protected render(): TemplateResult {
     return html`
-    <div class="${styles}">
+    <div id="pageTest" class="${styles}">
       TEST Page
     </div>
     `;

@@ -7,6 +7,7 @@
     "test": "tsc && karma start --reporters progress",
     "test:coverage": "tsc && karma start --coverage",
     "test:watch": "tsc && karma start --auto-watch=true --reporters progress --single-run=false --browsers IE,Chrome,ChromeHeadless",
+    "capture": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=55000",
     "storybook": "start-storybook --file-extensions .ts --node-resolve --babel --open --watch",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir dist --app-index index.html --open --compatibility none",
@@ -58,7 +59,7 @@
     }
   },
   "name": "accordion-web",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",
