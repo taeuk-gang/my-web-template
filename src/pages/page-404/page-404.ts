@@ -9,9 +9,9 @@ export class Page404 extends LitElement {
 
   protected render(): TemplateResult {
     return html`
-      <main class="${styles}">
+      <div id="page404" class="${styles}">
         404 Page
-      </main>
+      </div>
     `;
   }
 }

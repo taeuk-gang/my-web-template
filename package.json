@@ -61,7 +61,7 @@
     }
   },
   "name": "accordion-web",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",

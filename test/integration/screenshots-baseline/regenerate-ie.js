@@ -16,11 +16,9 @@ describe('📸 capture...', () => {
     const config = createConfig({
       port:4445, 
       appIndex: `index.html`,
-      rootDir: path.join(__dirname, '../../..'), 
-      babel: true,
-      compatibility: `auto`,      
-      fileExtensions: [`.ts`],
-      nodeResolve:true,
+      rootDir: path.join(__dirname, '../../../dist'), 
+      compatibility: `none`,
+      nodeResolve: true,
     });
     server = await startServer(config);
     const makeFolder = () => {
@@ -61,16 +59,45 @@ describe('📸 capture...', () => {
     await browser.quit();
   });
 
-  it('capture...', async () => {    
+  it('capture home...', async () => {    
     await browser.manage().window().maximize();
+
     await browser.get('http://127.0.0.1:4445/');
-    await browser.wait(webdriver.until.elementLocated(webdriver.By.css('#pageHome')));    
+    await browser.wait(webdriver.until.elementLocated(webdriver.By.css('#pageHome')));
       
     // IF window zoom 150%
     await browser.executeScript("document.body.style.zoom='66.66%'");
     await browser.takeScreenshot().then((data) => {        
       const base64Data = data.replace(/^data:image\/png;base64,/,"");
-      fs.writeFile(`${baselineDir}/wide-ie/index.png`, base64Data, 'base64', (err) => {
+      fs.writeFile(`${baselineDir}/wide-ie/home.png`, base64Data, 'base64', (err) => {
+        if (err) console.log(err);
+      });
+    });        
+  });
+
+  it('capture Test...', async () => {    
+    await browser.get('http://127.0.0.1:4445/test');
+    await browser.wait(webdriver.until.elementLocated(webdriver.By.css('#pageTest')));
+      
+    // IF window zoom 150%
+    await browser.executeScript("document.body.style.zoom='66.66%'");
+    await browser.takeScreenshot().then((data) => {        
+      const base64Data = data.replace(/^data:image\/png;base64,/,"");
+      fs.writeFile(`${baselineDir}/wide-ie/test.png`, base64Data, 'base64', (err) => {
+        if (err) console.log(err);
+      });
+    });
+  });
+
+  it('capture 404...', async () => {    
+    await browser.get('http://127.0.0.1:4445/404');
+    await browser.wait(webdriver.until.elementLocated(webdriver.By.css('#page404')));
+      
+    // IF window zoom 150%
+    await browser.executeScript("document.body.style.zoom='66.66%'");
+    await browser.takeScreenshot().then((data) => {        
+      const base64Data = data.replace(/^data:image\/png;base64,/,"");
+      fs.writeFile(`${baselineDir}/wide-ie/404.png`, base64Data, 'base64', (err) => {
         if (err) console.log(err);
       });
     });
