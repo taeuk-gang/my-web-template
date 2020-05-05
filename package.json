@@ -8,6 +8,7 @@
     "test:coverage": "tsc && karma start --coverage",
     "test:watch": "tsc && karma start --auto-watch=true --reporters progress --single-run=false --browsers IE,Chrome,ChromeHeadless",
     "capture": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=55000",
+    "capture:ie": "mocha test/integration/screenshots-baseline/regenerate-ie.js --timeout=55000",
     "storybook": "start-storybook --file-extensions .ts --node-resolve --babel --open --watch",
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir dist --app-index index.html --open --compatibility none",
@@ -48,6 +49,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-filesize": "^8.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "sinon": "^9.0.2",
     "typescript": "^3.8.3",
     "utf-8-validate": "^5.0.2"
@@ -59,7 +61,7 @@
     }
   },
   "name": "accordion-web",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",

@@ -11,7 +11,7 @@ describe('📸 capture...', () => {
 
   before(async () => {
     const config = createConfig({
-      port:4444, 
+      port:4443, 
       appIndex: `index.html`,
       rootDir: path.join(__dirname, '../../..'), 
       babel: true,
@@ -62,15 +62,15 @@ async function generateBaselineScreenshots(page) {
     console.log(prefix + '...');
     page.setViewport(breakpoints[i]);
     // Index.
-    await page.goto('http://127.0.0.1:4444/');
+    await page.goto('http://127.0.0.1:4443/');
     await page.waitForSelector('#pageHome', {visible: true});
     await page.screenshot({path: `${baselineDir}/${prefix}/index.png`});
     // Views.
-    await page.goto(`http://127.0.0.1:4444/test`);
+    await page.goto(`http://127.0.0.1:4443/test`);
     await page.waitForSelector('#pageTest', {visible: true});
     await page.screenshot({path: `${baselineDir}/${prefix}/test.png`});
     // 404.
-    await page.goto('http://127.0.0.1:4444/notfound');
+    await page.goto('http://127.0.0.1:4443/notfound');
     await page.screenshot({path: `${baselineDir}/${prefix}/404.png`});
   }
 }
