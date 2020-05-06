@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Hello",
+    "subtitle": "World"
+  },
+  "cta": {
+    "test": "things are awesome!",
+    "awesome": "things are awesome!",
+    "cats": "Cats"
+  }
+}

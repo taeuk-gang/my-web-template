@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "제목",
+    "subtitle": "설명"
+  },
+  "cta": {
+    "test": "things is hi",
+    "cats": "고양이"
+  }
+}
