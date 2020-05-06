@@ -5,6 +5,7 @@ export const styles = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   margin: 0;

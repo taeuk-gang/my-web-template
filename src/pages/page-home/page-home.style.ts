@@ -11,5 +11,7 @@ export const styles = css`
   padding: 0;
 
   font-size: 32px;
+
+  flex-direction: column;
 }
 `;

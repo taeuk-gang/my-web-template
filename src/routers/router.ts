@@ -2,7 +2,9 @@ import { Router } from '@vaadin/router';
 
 import '../pages/base-layout/base-layout';
 
-const initRouter = (): void => {
+export let router: Router;
+
+const initRouter = (): Router => {
   const router: Router = new Router(document.querySelector('#root')); 
   router.setRoutes([
     {
@@ -33,10 +35,12 @@ const initRouter = (): void => {
       },
     }
   ]);
+
+  return router;
 }
 
 window.addEventListener('load', () => { 
-  initRouter();
+  router = initRouter();
 });
 
 

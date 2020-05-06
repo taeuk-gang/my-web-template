@@ -61,16 +61,18 @@
     }
   },
   "name": "accordion-web",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "private": true,
   "description": "Webcomponent accordion-web following open-wc recommendations",
   "author": "accordion-web",
   "license": "MIT",
   "dependencies": {
+    "@adobe/lit-mobx": "0.0.4",
     "@vaadin/router": "^1.7.2",
     "emotion": "^10.0.27",
     "lit-element": "^2.3.1",
-    "lit-html": "^1.2.1"
+    "lit-html": "^1.2.1",
+    "mobx": "^4.15.4"
   },
   "repository": {
     "type": "git",
